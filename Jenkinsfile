@@ -8,7 +8,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRe
             }
             stage('Make Files'){
                 steps{
-                    sh "touch ~/jenkins-tuturial/file1 ~/jenkins-tuturial/file2"
+                    sh "touch /home/jenkins/.jenkins/workspace/hack1-prep/file1 /home/jenkins/.jenkins/workspace/hack1-prep/file2"
                 }
             }
         }
