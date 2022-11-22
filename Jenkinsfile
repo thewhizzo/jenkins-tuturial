@@ -3,12 +3,12 @@ pipeline{
         stages{
             stage('Make Directory'){
                 steps{
-                    sh "mkdir ~/jenkins-tutorial-tester"
+checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/thewhizzo/jenkins-tuturial.git']]])
                 }
             }
             stage('Make Files'){
                 steps{
-                    sh "touch ~/jenkins-tutorial-tester/file1 ~/jenkins-tutorial-tester/file2"
+                    sh "touch ~/jenkins-tuturial/file1 ~/jenkins-tuturial/file2"
                 }
             }
         }
